@@ -18,14 +18,15 @@
                         </thead>
                         <tbody id="resulist">
                            
-                           
+                        
                     
-                        {% for x in data  %}
+                        {% for x in data  %} <!-- 后台数据导入 -->
                             <tr>
                                 <td width="30%">{{ x.xTarget }}</td>
                                 <td width="20%">{{ x.xType }}</td>
                                 <td width="20%">{{ x.xInfo }}</td>
                                 <td width="30%">{{ x.xTime }}</td>
+                                
                             </tr>
                                
                         {% endfor %}

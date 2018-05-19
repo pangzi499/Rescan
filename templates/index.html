@@ -6,22 +6,23 @@
       {% include "daohang.html" %}
     <main>
         <div style="padding: 10px 50px 10px;">
-            <form action="/index" method="POST" >
+            <form action="/index" method="POST" > <!-- 定义表单 index表示view文件下的index函数 -->
               {% comment %} class="bs-example bs-example-form" role="form" {% endcomment %}
               <div style="padding: 10px 50px 10px;">  
                   {% csrf_token %}
                   <h3>Target:</h3>
-                <input type="text" name="text">
-                <input  type="submit" value="Send">
+                <input type="text" name="text"> <!-- 定义输入的文件框 -->
+                <input  type="submit" value="Send"> <!-- 提交 -->
               </div>
               <div style="padding: 10px 50px 10px;">
                 <!-- <h4>Modules</h4> -->
-                <select name="cars" class="selectpicker" data-style="btn-primary">
-                  <option selected="selected"  value="0" >Mode</option>
-                  <option value="1">反序列化漏洞检测</option>
-                  <option value="2">其他</option>
-                  <option value="3"></option>
-                  <option value="4"></option>
+                <select name="cars" class="selectpicker" data-style="btn-primary"><!-- 下拉框 -->
+                  {% comment %} <option selected="selected"  value="0" >Mode</option> {% endcomment %}
+                  <option selected="selected" value="1">JBoss</option>
+                  <option value="2">Weblogic</option>
+                  <option value="3">Jenkins</option>
+                  <option value="4">others</option>
+                  
                   
                 </select>
               </div>

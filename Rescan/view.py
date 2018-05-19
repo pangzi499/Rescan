@@ -17,7 +17,7 @@ def index(request):
         modelss_ = request.POST['cars']
     if request.POST:
         url = request.POST['text']
-        context1 = u"目标地址:%s\n"%url + u"[*] 任务开始......\t\n" 
+        context1 = u"目标地址:%s\n"%url + u"[*] 任务开始......\t\n"
 
     if modelss_ == "1":
         url_ = u"http://" + url
@@ -26,20 +26,28 @@ def index(request):
         if len(x) <= 30:
             print x
             a = u"[*]目标：%s \n"%url + u"[*]存在Jboss漏洞" 
-            models.zeroHistory(xTarget=url,xType='Java',xInfo='Ture').save()
+            models.zeroHistory(xTarget=url,xType='JBoss',xInfo='Ture').save()
         else:
             a = u"[*]目标：%s \n"%url + u"[*]未检测到反序列化漏洞" 
-            models.zeroHistory(xTarget=url,xType='Java',xInfo='Fales').save()
+            models.zeroHistory(xTarget=url,xType='JBoss',xInfo='Fales').save()
         context['textValue'] = context1 + a
     elif modelss_ == "2":
-       context2 = os.popen("pocsuite -r D:\\Python27\\Lib\\site-packages\\pocsuite\\tests\\dede_search.php_sqli.py -u %s"%url)
+        context2 = os.popen("python D:\\temp\\Rescan\\PocList\\cve-2017-3248.py %s"%url)
+        x = context2.read().decode('utf-8')
+        if "successful" in x:
+            models.zeroHistory(xTarget=url,xType='Weblogic',xInfo='Ture').save()
+        else:
+            x = u"[*]目标：%s \n"%url + u"[*]未检测到反序列化漏洞" 
+            models.zeroHistory(xTarget=url,xType='Weblogic',xInfo='False').save()
+        context['textValue'] = context1 + x
+    elif modelss_ == "3":  
+        pass 
+    elif modelss_ == "4":
+       context2 = os.popen("pocsuite -r D:\\Python27\\Lib\\site-packages\\pocsuite\\tests\\dede_download.php_sqli.php.py -u %s"%url)
        x = context2.read().decode('utf-8')
        context['textValue'] = context1 + x
        models.zeroHistory(xTarget=url,xType='Python',xInfo='Fales').save()
-    elif modelss_ == "0":
-        context['testValue'] = '请选择模块......'
-    else:
-        pass
+    
     # history.object.create(xTarget=url,xType='Java',xInfo='Ture')
     # models.zeroHistory(xTarget=url,xType='Java',xInfo='Ture').save()
     return render(request, 'index.html',context)

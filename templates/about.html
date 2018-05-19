@@ -5,7 +5,80 @@
   <body>
       {% include "daohang.html" %}
     <main>
-        <h1>开发中......</h1>
+        <div style="padding: 10px 50px 10px;">
+          <h3>Rescan漏洞扫描平台</h3>
+          </div>
+        <div style="padding: 10px 50px 10px;" class="panel-group" id="accordion">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" 
+                       href="#collapseFour">
+                      友情提醒
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    本站点属于信息安全相关技术研究平台，仅供学习参考，如有发现重大BUG，请与我们联系。
+
+                </div>
+              </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" 
+                     href="#collapseOne">
+                    小组成员
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                   组长:黄振宇；
+                   组员：王思颖；
+                   组员：李杰
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" 
+                     href="#collapseTwo">
+                    Github链接
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                  https://github.com/pangzi499/Rescan/
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" 
+                     href="#collapseThree">
+                    E-mail
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                  pangzi499@gmail.com
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <script type="text/javascript">
+            $(function () { $('#collapseOne').collapse('hide')});
+            $(function () { $('#collapseTwo').collapse('hide')});
+            $(function () { $('#collapseThree').collapse('hide')});
+            $(function () { $('#collapseOne').collapse('hide')});
+          </script> 
 	</main>
 </body>
 </html>
