@@ -21,11 +21,10 @@ from Rescan import view as st
 from django.contrib.auth.views import login
 #urlpatterns在url文件中是一个url映射列表
 urlpatterns = [
-
     url(r'^$', st.index),#url和后台函数的绑定
     url(r'^index', st.index,name='index'),
     url(r'^poc_list$', st.poc_list,name='poc_list'),
     url(r'^about$', st.about,name='about'),
     url(r'^admin/', admin.site.urls),
     url(r'^history',st.xhistory,name='history')
-]
+              ]
