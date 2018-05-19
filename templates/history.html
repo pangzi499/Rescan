@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  {% include "header.html" %}
+  {% include "banner.html" %}
+  <body>
+      {% include "daohang.html" %}
+      <main>
+            <div class="container-fluid">
+                    <h1 class="bread-crumb"> <strong>History</strong></h1>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Target</th>
+                            <th>Type</th>
+                            <th>Info</th>
+                            <th>Time</th>
+                        </tr>
+                        </thead>
+                        <tbody id="resulist">
+                           
+                           
+                    
+                        {% for x in data  %}
+                            <tr>
+                                <td width="30%">{{ x.xTarget }}</td>
+                                <td width="20%">{{ x.xType }}</td>
+                                <td width="20%">{{ x.xInfo }}</td>
+                                <td width="30%">{{ x.xTime }}</td>
+                            </tr>
+                               
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="6">
+                                <ul id="pagination-ddol" class="pagination-sm pull-right"></ul>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                </main>
+	
+</body>
+</html>

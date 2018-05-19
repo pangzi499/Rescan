@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  {% include "header.html" %}
+  {% include "banner.html" %}
+  <body>
+      {% include "daohang.html" %}
+    <main>
+<div class="container-fluid">
+        <h1 class="bread-crumb"> <strong>PocList</strong></h1>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>PocType</th>
+                <th>PocName</th>
+                <th>PocPath</th>
+            </tr>
+            </thead>
+            <tbody id="resulist">
+               
+            {% comment %} {% for x in data %}
+            
+            {{ x.name }} {{ x.type }}
+           
+            
+            {% endfor %} {% endcomment %}
+               
+            {% for x in data  %}
+                <tr>
+                    <td width="20%">{{ x.xtype }}</td>
+                    <td width="30%">{{ x.xname }}</td>
+                    <td width="50%">{{ x.xpath }}</td>
+                </tr>
+                   
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="6">
+                    <ul id="pagination-ddol" class="pagination-sm pull-right"></ul>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+	</main>
+</body>
+</html>

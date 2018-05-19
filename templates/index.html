@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  {% include "header.html" %}
+  {% include "banner.html" %}
+  <body>
+      {% include "daohang.html" %}
+    <main>
+        <div style="padding: 10px 50px 10px;">
+            <form action="/index" method="POST" >
+              {% comment %} class="bs-example bs-example-form" role="form" {% endcomment %}
+              <div style="padding: 10px 50px 10px;">  
+                  {% csrf_token %}
+                  <h3>Target:</h3>
+                <input type="text" name="text">
+                <input  type="submit" value="Send">
+              </div>
+              <div style="padding: 10px 50px 10px;">
+                <!-- <h4>Modules</h4> -->
+                <select name="cars" class="selectpicker" data-style="btn-primary">
+                  <option selected="selected"  value="0" >Mode</option>
+                  <option value="1">反序列化漏洞检测</option>
+                  <option value="2">其他</option>
+                  <option value="3"></option>
+                  <option value="4"></option>
+                  
+                </select>
+              </div>
+           
+                            
+              {% comment %} <div class="row">
+                <div class="col-lg-6">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">
+                        开始测试
+                      </button>
+                    </span>
+                    <input type="text" name='text' class="form-control">
+                  </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 --><br>
+              </div><!-- /.row -->
+            </form>
+          </div> {% endcomment %}
+          <div style="padding: 10px 50px 10px;">
+          <textarea readonly rows="15" cols="110">
+              {{textValue}}
+              </textarea>
+            </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>平台</title>
+
+<link rel="stylesheet" type="text/css" href="../css/layout.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+<style type="text/css">
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+<header>
+
+<table width="100%" height="75" border="0">
+<tr>
+<td width="75"><img src="../img/2.jpg" width="77" height="77"></td>
+<td id="b1">全网漏洞威胁平台之反序列化漏洞影响评估 </td>
+<td><a id="b2">admin</a> &nbsp;&nbsp;<a id="b2">管理后台</a>&nbsp;&nbsp; <a id="b2">退出</a></td>
+</tr>
+</table>
+<nav>
+    <ul>    
+  <li><a href="../index.html" style="color:#666">漏洞检测</a>
+  <li><a  href="../index.html">添加扫描</a>
+  <li><a href="jieguo.html">扫描结果</a>
+  <li><a href="renwu.html">扫描中的任务</a>
+  <li>  
+  <li><a href="liebiao.html">poc列表</a>
+  <li><a href="zhongduan.html">终端</a>
+  <li>  
+    </ul>
+</nav>
+</header>
+
+<article>
+<table align="center" width="80%">
+<tr>
+<td height="57" colspan="3" bordercolor="#CEE7FF" id="b3"> 插件列表  </td>
+</tr>            <tr>
+                <td height="57">插件类别</td>
+                <td>插件名称</td>
+                <td>插件位置</td>
+            </tr>               <tr>
+                    <td width="33%" height="70">{{ poc_type }}</td>
+                    <td width="35%">
+                        <div class='pre-wrapper' style="height: 20px;">
+                            <pre>{{ each_poc |sp }}</pre>
+                        </div>
+                    </td>
+                    <td width="32%">{{ each_poc }}</td>
+                </tr>
+
+            <tr>
+                <td colspan="6">
+                    <ul id="pagination-ddol" class="pagination-sm pull-right"></ul>
+                </td>
+            </tr>
+</table>
+   
+</article>
+</body>
+</html>

@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0px;
+  padding:0px;
+  font:12px Arial, 宋体;
+  text-align:center;
+}
+#container{
+	width:960px;
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 24px;
+	background-color:#FFF;
+	background-image:url(../images/%E8%83%8C%E6%99%AF.jpg);
+}

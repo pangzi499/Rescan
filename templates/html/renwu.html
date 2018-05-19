@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>平台</title>
+
+<link rel="stylesheet" type="text/css" href="../css/layout.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+<style type="text/css">
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+<header>
+
+<table width="100%" height="75" border="0">
+<tr>
+<td width="75"><img src="../img/2.jpg" width="77" height="77"></td>
+<td id="b1">全网漏洞威胁平台之反序列化漏洞影响评估 </td>
+<td><a id="b2">admin</a> &nbsp;&nbsp;<a id="b2">管理后台</a>&nbsp;&nbsp; <a id="b2">退出</a></td>
+</tr>
+</table>
+<nav>
+    <ul>    
+  <li><a href="../index.html" style="color:#666">漏洞检测</a>
+  <li><a  href="../index.html">添加扫描</a>
+  <li><a href="jieguo.html">扫描结果</a>
+  <li><a href="renwu.html">扫描中的任务</a>
+  <li><a href="liebiao.html">poc列表</a>
+  <li><a href="zhongduan.html">终端</a>
+  </ul>
+</nav>
+</header>
+<article>
+
+<table width="80%" align="center" border="1" bordercolor="#CEE7FF">
+<tr>
+<td height="76" colspan="3" bordercolor="#CEE7FF" id="b3">  扫描中的任务 </td>
+</tr>
+<tr>
+<td width="33%" height="71"bordercolor="#CEE7FF" id="b4">  任务名称 </td>
+<td width="34%" bordercolor="#CEE7FF">  传入参数</td>
+<td width="33%" bordercolor="#CEE7FF">状态 </td>
+</tr>
+<tr> 
+<td height="99" id="b4" bordercolor="#CEE7FF" width="20%">{{ task.name }}</td>
+                    <td bordercolor="#CEE7FF" width="70%">
+                        <div class='pre-wrapper' style="height: 100px;">
+                            <pre>{{ task.args }}</pre>
+                        </div>
+                    </td>
+                    <td bordercolor="#CEE7FF" width="10%">{{ task.state }}</td>
+                </tr>
+            <tr>
+                <td colspan="6">
+                    <ul id="pagination-ddol" class="pagination-sm pull-right"></ul>
+                </td>
+            </tr>
+</table>
+    </div>
+</main>
+</body>
+</html>
