@@ -1,2 +1,2 @@
 # Rescan
-(Verify mode)  'Vulnerability scanning platform'  
+(Verify mode)**Vulnerability scanning platform**
